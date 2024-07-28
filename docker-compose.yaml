@@ -1,10 +1,10 @@
 version: "3.9"
 services:
 
-  backend:
+  django:
     build: .
-    container_name: todo
-    command: gunicorn -c /app/gunicorn.conf.py core.wsgi:application
+    container_name: django
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./core:/app
       - static_volume:/app/static
@@ -26,3 +26,5 @@ services:
 
 volumes:
   postgres_data:
+  static_volume:
+  media_volume:
