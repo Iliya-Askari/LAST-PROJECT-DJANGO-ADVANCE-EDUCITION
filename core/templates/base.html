@@ -29,7 +29,7 @@
     <div id="preloader">
         <div id="loader" class="loader">
             <div class="loader-container">
-                <div class="loader-icon"><img src="{% static 'assets/img/logo/preloader.png'  %}" alt="Preloader"></div>
+                <div class="loader-icon"><img src="{% static 'assets/img/logo/preloader.png' %}" alt="Preloader"></div>
             </div>
         </div>
     </div>
@@ -66,21 +66,16 @@
                         <div class="tgmenu__wrap">
                             <nav class="tgmenu__nav">
                                 <div class="logo">
-                                    <a href="{% url 'home:index.html' %}"><img src="{% static 'assets/img/logo/logo.png'  %}" alt="Logo"></a>
+                                    <a href="{% url 'home:index' %}"><img src="{% static 'assets/img/logo/logo.png' %}" alt="Logo"></a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                     <ul class="navigation">
-                                        <li class="active menu-item-has"><a href="{% url 'home:index.html' %}">خانه</a>
-                                        </li>
-                                        <li class="menu-item-has"><a href="{% url 'home:about.html' %}">درباره ما</a>
-                                        </li>
-                                        <li class="menu-item-has"><a href="{% url 'services:services.html' %}">خدمات ما</a>
-                                        </li>
-                                        <li class="menu-item-has"><a href="{% url 'team:team.html' %}">اعضای تیم</a>
-                                        </li>
-                                        <li class="menu-item-has"><a href="{% url 'blog:blog.html' %}">وبلاگ</a>
-                                        </li>
-                                        <li><a href='{% url "home:contact.html"%}'>تماس با ما</a></li>
+                                        <li><a href="{% url 'home:index' %}">خانه</a></li>
+                                        <li><a href="{% url 'home:about' %}">درباره ما</a></li>
+                                        <li><a href="{% url 'services:services' %}">خدمات ما</a></li>
+                                        <li><a href="{% url 'team:team' %}">اعضای تیم</a></li>
+                                        <li><a href="{% url 'blog:blog' %}">وبلاگ</a></li>
+                                        <li><a href="{% url 'home:contact' %}">تماس باما</a></li>
                                     </ul>
                                 </div>
                                 <div class="tgmenu__action d-none d-md-block">
@@ -107,7 +102,7 @@
                                                 </svg>
                                             </a>
                                         </li>
-                                        <li class="header-btn"><a class='btn' href='{% url "login.html" %}'>ورود</a></li>
+                                        <li class="header-btn"><a class='btn' href=''>ورود</a></li>
                                     </ul>
                                 </div>
                                 <div class="mobile-nav-toggler">
@@ -130,7 +125,7 @@
                             <nav class="tgmobile__menu-box">
                                 <div class="close-btn"><i class="fas fa-times"></i></div>
                                 <div class="nav-logo">
-                                    <a href=''><img src="{% static 'assets/img/logo/logo.png'  %}" alt="Logo"></a>
+                                    <a href=''><img src="{% static 'assets/img/logo/logo.png' %}" alt="Logo"></a>
                                 </div>
                                 <div class="tgmobile__search">
                                     <form action="#">
@@ -300,12 +295,12 @@
                             <h4 class="fw-title">دسترسی سریع</h4>
                             <div class="footer-link-list">
                                 <ul class="list-wrap">
-                                    <li><a href="{% url 'home:index.html' %}">خانه</a></li>
-                                    <li><a href="{% url 'home:about.html' %}">درباره ما</a></li>
-                                    <li><a href="{% url 'services:services.html' %}">خدمات ما</a></li>
-                                    <li><a href="{% url 'team:team.html' %}">اعضای تیم</a></li>
-                                    <li><a href="{% url 'blog:blog.html' %}">وبلاگ</a></li>
-                                    <li><a href="{% url 'home:contact.html' %}">تماس باما</a></li>
+                                    <li><a href="{% url 'home:index' %}">خانه</a></li>
+                                    <li><a href="{% url 'home:about' %}">درباره ما</a></li>
+                                    <li><a href="{% url 'services:services' %}">خدمات ما</a></li>
+                                    <li><a href="{% url 'team:team' %}">اعضای تیم</a></li>
+                                    <li><a href="{% url 'blog:blog' %}">وبلاگ</a></li>
+                                    <li><a href="{% url 'home:contact' %}">تماس باما</a></li>
                                 </ul>
                             </div>
                         </div>
