@@ -12,11 +12,18 @@
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                     <ul class="navigation">
-                                        <li ><a href="{% url 'home:index' %}">خانه</a></li>
-                                        <li><a href="{% url 'home:about' %}">درباره ما</a></li>
-                                        <li class="active menu-item-has"><a href="{% url 'services:services' %}">خدمات</a></li>
-                                        <li><a href="{% url 'blog:blog' %}">وبلاگ</a></li>
-                                        <li><a href="{% url 'home:contact' %}">تماس باما</a></li>
+                                        <li ><a href="{% url 'home:index' %}">خانه</a>
+                                        </li>
+                                        <li><a href="{% url 'home:about' %}">درباره ما</a>
+                                        </li>
+                                        <li><a href="{% url 'services:services' %}">خدمات</a>
+                                        </li>
+                                        <li class="active menu-item-has"><a href="{% url 'home:team' %}">اعضای تیم</a>
+                                        </li>
+                                        <li><a href="{% url 'blog:blog' %}">وبلاگ</a>
+                                        </li>
+                                        <li><a href="{% url 'home:contact' %}">تماس باما</a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="tgmenu__action d-none d-md-block">

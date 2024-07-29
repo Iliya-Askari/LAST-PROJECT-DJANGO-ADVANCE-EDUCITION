@@ -10,3 +10,8 @@ class AboutView(TemplateView):
 class ContactView(TemplateView):
     template_name = 'home/contact.html'
     
+class TeamView(TemplateView):
+    template_name = 'team/team.html'
+
+class TeamDetailsView(TemplateView):
+    template_name = 'team/team-details.html'
