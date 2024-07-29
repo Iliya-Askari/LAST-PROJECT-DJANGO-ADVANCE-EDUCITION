@@ -12,9 +12,18 @@
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                     <ul class="navigation">
-                                        <li class="active menu-item-has"><a href="{% url 'home:index' %}">خانه</a></li>
-                                        <li><a href="{% url 'home:about' %}">درباره ما</a></li>
-                                        <li><a href="{% url 'home:contact' %}">تماس باما</a></li>
+                                        <li class="active menu-item-has"><a href="{% url 'home:index' %}">خانه</a>
+                                        </li>
+                                        <li><a href="{% url 'home:about' %}">درباره ما</a>
+                                        </li>
+                                        <li><a href="{% url 'services:services' %}">خدمات</a>
+                                        </li>
+                                        <li><a href="{% url 'home:team' %}">اعضای تیم</a>
+                                        </li>
+                                        <li><a href="{% url 'blog:blog' %}">وبلاگ</a>
+                                        </li>
+                                        <li><a href="{% url 'home:contact' %}">تماس باما</a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="tgmenu__action d-none d-md-block">
@@ -181,7 +190,7 @@
                             <span class="sub-title" data-aos="fade-up" data-aos-delay="0">ما در این زمینه متخصص هستیم</span>
                             <h2 class="title" data-aos="fade-up" data-aos-delay="200">مشاوره کسب و کار همه راه حل ها</h2>
                             <p data-aos="fade-up" data-aos-delay="400">شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد.</p>
-                            <a class='btn' data-aos-delay='600' data-aos='fade-up' href='about.html'>مطالعه بیشتر</a>
+                            <a class='btn' data-aos-delay='600' data-aos='fade-up' href='{% url "home:about" %}'>مطالعه بیشتر</a>
                         </div>
                         <div class="banner-shape">
                             <img src="{% static 'assets/img/banner/h4_banner_img.png' %}" alt="" class="rightToLeft">
@@ -266,7 +275,7 @@
                                         <h4 class="title">امین احمدی <span>, سئو</span></h4>
                                     </div>
                                 </div>
-                                <a class='btn btn-two' href='about.html'>مطالعه بیشتر</a>
+                                <a class='btn btn-two' href='{% url "home:about" %}'>مطالعه بیشتر</a>
                             </div>
                             <div class="about-shape-wrap">
                                 <img src="{% static 'assets/img/images/about_shape03.png' %}" alt="">
@@ -297,60 +306,60 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
                             <div class="services-item shine-animate-item">
                                 <div class="services-thumb">
-                                    <a class='shine-animate' href='services-details.html'><img src="{% static 'assets/img/services/services_img01.jpg' %}" alt=""></a>
+                                    <a class='shine-animate' href='{% url "services:details" %}'><img src="{% static 'assets/img/services/services_img01.jpg' %}" alt=""></a>
                                 </div>
                                 <div class="services-content">
                                     <div class="icon">
                                         <i class="flaticon-profit"></i>
                                     </div>
-                                    <h4 class="title"><a href='services-details.html'>بازاریابی استراتژیک</a></h4>
+                                    <h4 class="title"><a href='{% url "services:details" %}'>بازاریابی استراتژیک</a></h4>
                                     <p>صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                                    <a class='btn' href='services-details.html'>مطالعه بیشتر</a>
+                                    <a class='btn' href='{% url "services:details" %}'>مطالعه بیشتر</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
                             <div class="services-item shine-animate-item">
                                 <div class="services-thumb">
-                                    <a class='shine-animate' href='services-details.html'><img src="{% static 'assets/img/services/services_img02.jpg' %}" alt=""></a>
+                                    <a class='shine-animate' href='{% url "services:details" %}'><img src="{% static 'assets/img/services/services_img02.jpg' %}" alt=""></a>
                                 </div>
                                 <div class="services-content">
                                     <div class="icon">
                                         <i class="flaticon-investment-1"></i>
                                     </div>
-                                    <h4 class="title"><a href='services-details.html'>برنامه ریزی سرمایه گذاری</a></h4>
+                                    <h4 class="title"><a href='{% url "services:details" %}'>برنامه ریزی سرمایه گذاری</a></h4>
                                     <p>چاپگرها و متون بلکه روزنامه و مجله در ستون.</p>
-                                    <a class='btn' href='services-details.html'>مطالعه بیشتر</a>
+                                    <a class='btn' href='{% url "services:details" %}'>مطالعه بیشتر</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
                             <div class="services-item shine-animate-item">
                                 <div class="services-thumb">
-                                    <a class='shine-animate' href='services-details.html'><img src="{% static 'assets/img/services/services_img03.jpg' %}" alt=""></a>
+                                    <a class='shine-animate' href='{% url "services:details" %}'><img src="{% static 'assets/img/services/services_img03.jpg' %}" alt=""></a>
                                 </div>
                                 <div class="services-content">
                                     <div class="icon">
                                         <i class="flaticon-pie-chart"></i>
                                     </div>
-                                    <h4 class="title"><a href='services-details.html'>بینش و تجزیه و تحلیل</a></h4>
+                                    <h4 class="title"><a href='{% url "services:details" %}'>بینش و تجزیه و تحلیل</a></h4>
                                     <p>نرم افزارها شناخت بیشتری را برای طراحان رایانه.</p>
-                                    <a class='btn' href='services-details.html'>مطالعه بیشتر</a>
+                                    <a class='btn' href='{% url "services:details" %}'>مطالعه بیشتر</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
                             <div class="services-item shine-animate-item">
                                 <div class="services-thumb">
-                                    <a class='shine-animate' href='services-details.html'><img src="{% static 'assets/img/services/services_img04.jpg' %}" alt=""></a>
+                                    <a class='shine-animate' href='{% url "services:details" %}'><img src="{% static 'assets/img/services/services_img04.jpg' %}" alt=""></a>
                                 </div>
                                 <div class="services-content">
                                     <div class="icon">
                                         <i class="flaticon-light-bulb"></i>
                                     </div>
-                                    <h4 class="title"><a href='services-details.html'>مشاوره کسب و کار</a></h4>
+                                    <h4 class="title"><a href='{% url "services:details" %}'>مشاوره کسب و کار</a></h4>
                                     <p>اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
-                                    <a class='btn' href='services-details.html'>مطالعه بیشتر</a>
+                                    <a class='btn' href='{% url "services:details" %}'>مطالعه بیشتر</a>
                                 </div>
                             </div>
                         </div>
@@ -358,7 +367,7 @@
                 </div>
                 <div class="services-bottom-content">
                     <p>توانمندسازی مشاغل از طریق مشاوره استراتژیک با ما</p>
-                    <a class='btn' href='services.html'>نمایش همه خدمات</a>
+                    <a class='btn' href='{% url "services:services" %}'>نمایش همه خدمات</a>
                 </div>
             </div>
         </section>
@@ -413,124 +422,6 @@
             </div>
         </section>
         <!-- choose-area-end -->
-        <!-- counter-area -->
-        <!-- counter-area-end -->
-        <!-- project-area -->
-        <section class="project-area">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-6 col-lg-7">
-                        <div class="section-title text-center mb-50 tg-heading-subheading animation-style3">
-                            <span class="sub-title">پروژه های ما</span>
-                            <h2 class="title ">بیاید همه پروژه های شرکت مارا بررسی کنید.</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="project-item-wrap">
-                <div class="container custom-container-two">
-                    <div class="row">
-                        <div class="col-xl-3 col-md-6">
-                            <div class="project-item">
-                                <div class="project-thumb">
-                                    <a href='project-details.html'><img src="{% static 'assets/img/project/project_img01.jpg' %}" alt=""></a>
-                                </div>
-                                <div class="project-content">
-                                    <div class="left-side-content">
-                                        <h4 class="title"><a href='project-details.html'>مشاوره کسب و کار</a></h4>
-                                        <span>استراتژی کسب و کار</span>
-                                    </div>
-                                    <div class="link-arrow">
-                                        <a href='project-details.html'>
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 15" fill="none">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6293 3.27957C17.7117 2.80341 17.4427 2.34763 17.0096 2.17812C16.9477 2.15385 16.8824 2.13552 16.8144 2.12376L6.96081 0.419152C6.41654 0.325049 5.89911 0.689856 5.80491 1.23411C5.71079 1.77829 6.07564 2.29578 6.61982 2.38993L14.0946 3.68295L1.36574 12.6573C0.914365 12.9756 0.806424 13.5995 1.12467 14.0509C1.44292 14.5022 2.06682 14.6102 2.51819 14.2919L15.247 5.31753L13.954 12.7923C13.8598 13.3365 14.2247 13.854 14.7689 13.9482C15.3131 14.0422 15.8305 13.6774 15.9248 13.1332L17.6293 3.27957Z" fill="currentcolor" />
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6293 3.27957C17.7117 2.80341 17.4427 2.34763 17.0096 2.17812C16.9477 2.15385 16.8824 2.13552 16.8144 2.12376L6.96081 0.419152C6.41654 0.325049 5.89911 0.689856 5.80491 1.23411C5.71079 1.77829 6.07564 2.29578 6.61982 2.38993L14.0946 3.68295L1.36574 12.6573C0.914365 12.9756 0.806424 13.5995 1.12467 14.0509C1.44292 14.5022 2.06682 14.6102 2.51819 14.2919L15.247 5.31753L13.954 12.7923C13.8598 13.3365 14.2247 13.854 14.7689 13.9482C15.3131 14.0422 15.8305 13.6774 15.9248 13.1332L17.6293 3.27957Z" fill="currentcolor" />
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="project-item">
-                                <div class="project-thumb">
-                                    <a href='project-details.html'><img src="{% static 'assets/img/project/project_img02.jpg' %}" alt=""></a>
-                                </div>
-                                <div class="project-content">
-                                    <div class="left-side-content">
-                                        <h4 class="title"><a href='project-details.html'>آژانس دیجیتال</a></h4>
-                                        <span>خدمات شغلی</span>
-                                    </div>
-                                    <div class="link-arrow">
-                                        <a href='project-details.html'>
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 15" fill="none">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6293 3.27957C17.7117 2.80341 17.4427 2.34763 17.0096 2.17812C16.9477 2.15385 16.8824 2.13552 16.8144 2.12376L6.96081 0.419152C6.41654 0.325049 5.89911 0.689856 5.80491 1.23411C5.71079 1.77829 6.07564 2.29578 6.61982 2.38993L14.0946 3.68295L1.36574 12.6573C0.914365 12.9756 0.806424 13.5995 1.12467 14.0509C1.44292 14.5022 2.06682 14.6102 2.51819 14.2919L15.247 5.31753L13.954 12.7923C13.8598 13.3365 14.2247 13.854 14.7689 13.9482C15.3131 14.0422 15.8305 13.6774 15.9248 13.1332L17.6293 3.27957Z" fill="currentcolor" />
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6293 3.27957C17.7117 2.80341 17.4427 2.34763 17.0096 2.17812C16.9477 2.15385 16.8824 2.13552 16.8144 2.12376L6.96081 0.419152C6.41654 0.325049 5.89911 0.689856 5.80491 1.23411C5.71079 1.77829 6.07564 2.29578 6.61982 2.38993L14.0946 3.68295L1.36574 12.6573C0.914365 12.9756 0.806424 13.5995 1.12467 14.0509C1.44292 14.5022 2.06682 14.6102 2.51819 14.2919L15.247 5.31753L13.954 12.7923C13.8598 13.3365 14.2247 13.854 14.7689 13.9482C15.3131 14.0422 15.8305 13.6774 15.9248 13.1332L17.6293 3.27957Z" fill="currentcolor" />
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="project-item">
-                                <div class="project-thumb">
-                                    <a href='project-details.html'><img src="{% static 'assets/img/project/project_img03.jpg' %}" alt=""></a>
-                                </div>
-                                <div class="project-content">
-                                    <div class="left-side-content">
-                                        <h4 class="title"><a href='project-details.html'>مدیریت موجودی</a></h4>
-                                        <span>ردیابی موجودی</span>
-                                    </div>
-                                    <div class="link-arrow">
-                                        <a href='project-details.html'>
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 15" fill="none">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6293 3.27957C17.7117 2.80341 17.4427 2.34763 17.0096 2.17812C16.9477 2.15385 16.8824 2.13552 16.8144 2.12376L6.96081 0.419152C6.41654 0.325049 5.89911 0.689856 5.80491 1.23411C5.71079 1.77829 6.07564 2.29578 6.61982 2.38993L14.0946 3.68295L1.36574 12.6573C0.914365 12.9756 0.806424 13.5995 1.12467 14.0509C1.44292 14.5022 2.06682 14.6102 2.51819 14.2919L15.247 5.31753L13.954 12.7923C13.8598 13.3365 14.2247 13.854 14.7689 13.9482C15.3131 14.0422 15.8305 13.6774 15.9248 13.1332L17.6293 3.27957Z" fill="currentcolor" />
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6293 3.27957C17.7117 2.80341 17.4427 2.34763 17.0096 2.17812C16.9477 2.15385 16.8824 2.13552 16.8144 2.12376L6.96081 0.419152C6.41654 0.325049 5.89911 0.689856 5.80491 1.23411C5.71079 1.77829 6.07564 2.29578 6.61982 2.38993L14.0946 3.68295L1.36574 12.6573C0.914365 12.9756 0.806424 13.5995 1.12467 14.0509C1.44292 14.5022 2.06682 14.6102 2.51819 14.2919L15.247 5.31753L13.954 12.7923C13.8598 13.3365 14.2247 13.854 14.7689 13.9482C15.3131 14.0422 15.8305 13.6774 15.9248 13.1332L17.6293 3.27957Z" fill="currentcolor" />
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="project-item">
-                                <div class="project-thumb">
-                                    <a href='project-details.html'><img src="{% static 'assets/img/project/project_img04.jpg' %}" alt=""></a>
-                                </div>
-                                <div class="project-content">
-                                    <div class="left-side-content">
-                                        <h4 class="title"><a href='project-details.html'>حسابداری</a></h4>
-                                        <span>مدیریت تأمین مالی</span>
-                                    </div>
-                                    <div class="link-arrow">
-                                        <a href='project-details.html'>
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 15" fill="none">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6293 3.27957C17.7117 2.80341 17.4427 2.34763 17.0096 2.17812C16.9477 2.15385 16.8824 2.13552 16.8144 2.12376L6.96081 0.419152C6.41654 0.325049 5.89911 0.689856 5.80491 1.23411C5.71079 1.77829 6.07564 2.29578 6.61982 2.38993L14.0946 3.68295L1.36574 12.6573C0.914365 12.9756 0.806424 13.5995 1.12467 14.0509C1.44292 14.5022 2.06682 14.6102 2.51819 14.2919L15.247 5.31753L13.954 12.7923C13.8598 13.3365 14.2247 13.854 14.7689 13.9482C15.3131 14.0422 15.8305 13.6774 15.9248 13.1332L17.6293 3.27957Z" fill="currentcolor" />
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6293 3.27957C17.7117 2.80341 17.4427 2.34763 17.0096 2.17812C16.9477 2.15385 16.8824 2.13552 16.8144 2.12376L6.96081 0.419152C6.41654 0.325049 5.89911 0.689856 5.80491 1.23411C5.71079 1.77829 6.07564 2.29578 6.61982 2.38993L14.0946 3.68295L1.36574 12.6573C0.914365 12.9756 0.806424 13.5995 1.12467 14.0509C1.44292 14.5022 2.06682 14.6102 2.51819 14.2919L15.247 5.31753L13.954 12.7923C13.8598 13.3365 14.2247 13.854 14.7689 13.9482C15.3131 14.0422 15.8305 13.6774 15.9248 13.1332L17.6293 3.27957Z" fill="currentcolor" />
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-12">
-                            <div class="project-content-bottom">
-                                <p>ما با موفقیت به وظایف پیچیده کنار می آییم, <br> تضمین های بلند مدت و به طور مرتب ارائه دهیم</p>
-                                <a class='btn' href='project-details.html'>همه پروژه ها را ببینید</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="project-shape-wrap">
-                <img src="{% static 'assets/img/project/project_shape01.png' %}" alt="" class="alltuchtopdown">
-                <img src="{% static 'assets/img/project/project_shape02.png' %}" alt="" class="rotateme">
-            </div>
-        </section>
-        <!-- project-area-end -->
         <!-- request-area -->
         <section class="request-area request-bg">
             <div class="container">
@@ -595,7 +486,7 @@
                                     </div>
                                 </div>
                                 <div class="team-content">
-                                    <h4 class="title"><a href='team-details.html'>جون کوپر</a></h4>
+                                    <h4 class="title"><a href='{% url "home:team-details" %}'>جون کوپر</a></h4>
                                     <span>مشاور مالی</span>
                                 </div>
                             </div>
@@ -617,7 +508,7 @@
                                     </div>
                                 </div>
                                 <div class="team-content">
-                                    <h4 class="title"><a href='team-details.html'>ایلنور پنا</a></h4>
+                                    <h4 class="title"><a href='{% url "home:team-details" %}'>ایلنور پنا</a></h4>
                                     <span>مشاور مالی</span>
                                 </div>
                             </div>
@@ -639,7 +530,7 @@
                                     </div>
                                 </div>
                                 <div class="team-content">
-                                    <h4 class="title"><a href='team-details.html'>فلوید مایلز</a></h4>
+                                    <h4 class="title"><a href='{% url "home:team-details" %}'>فلوید مایلز</a></h4>
                                     <span>مشاور مالی</span>
                                 </div>
                             </div>
@@ -661,7 +552,7 @@
                                     </div>
                                 </div>
                                 <div class="team-content">
-                                    <h4 class="title"><a href='team-details.html'>رالف ادواردز</a></h4>
+                                    <h4 class="title"><a href='{% url "home:team-details" %}'>رالف ادواردز</a></h4>
                                     <span>مشاور مالی</span>
                                 </div>
                             </div>
@@ -837,23 +728,23 @@
                     <div class="col-xl-4 col-lg-6 col-md-10">
                         <div class="blog-post-item shine-animate-item">
                             <div class="blog-post-thumb">
-                                <a class='shine-animate' href='blog-details.html'><img src="{% static 'assets/img/blog/blog_post01.jpg' %}" alt=""></a>
+                                <a class='shine-animate' href='{% url "blog:details" %}'><img src="{% static 'assets/img/blog/blog_post01.jpg' %}" alt=""></a>
                                 <a class='post-tag' href='blog.html'>کسب و کار</a>
                             </div>
                             <div class="blog-post-content">
-                                <h2 class="title"><a href='blog-details.html'>بهترین راهای افزایش درامد</a></h2>
+                                <h2 class="title"><a href='{% url "blog:details" %}'>بهترین راهای افزایش درامد</a></h2>
                                 <div class="blog-avatar">
                                     <div class="avatar-thumb">
                                         <img src="{% static 'assets/img/blog/blog_avatar01.png' %}" alt="">
                                     </div>
                                     <div class="avatar-content">
-                                        <p>توسط <a href='blog-details.html'>دومین اسمیت</a></p>
+                                        <p>توسط <a href='{% url "blog:details" %}'>دومین اسمیت</a></p>
                                     </div>
                                 </div>
                                 <div class="blog-post-meta">
                                     <ul class="list-wrap">
                                         <li>
-                                            <a class='btn' href='blog-details.html'>مطالع بیشتر</a>
+                                            <a class='btn' href='{% url "blog:details" %}'>مطالع بیشتر</a>
                                         </li>
                                         <li><i class="fas fa-calendar-alt"></i>21 مهر 1403</li>
                                     </ul>
@@ -864,23 +755,23 @@
                     <div class="col-xl-4 col-lg-6 col-md-10">
                         <div class="blog-post-item shine-animate-item">
                             <div class="blog-post-thumb">
-                                <a class='shine-animate' href='blog-details.html'><img src="{% static 'assets/img/blog/blog_post02.jpg' %}" alt=""></a>
+                                <a class='shine-animate' href='{% url "blog:details" %}'><img src="{% static 'assets/img/blog/blog_post02.jpg' %}" alt=""></a>
                                 <a class='post-tag' href='blog.html'>حسابرسی</a>
                             </div>
                             <div class="blog-post-content">
-                                <h2 class="title"><a href='blog-details.html'>برترین مطالب قرن اخیر</a></h2>
+                                <h2 class="title"><a href='{% url "blog:details" %}'>برترین مطالب قرن اخیر</a></h2>
                                 <div class="blog-avatar">
                                     <div class="avatar-thumb">
                                         <img src="{% static 'assets/img/blog/blog_avatar01.png' %}" alt="">
                                     </div>
                                     <div class="avatar-content">
-                                        <p>توسط <a href='blog-details.html'>امین</a></p>
+                                        <p>توسط <a href='{% url "blog:details" %}'>امین</a></p>
                                     </div>
                                 </div>
                                 <div class="blog-post-meta">
                                     <ul class="list-wrap">
                                         <li>
-                                            <a class='btn' href='blog-details.html'>بیشتر بخوانید</a>
+                                            <a class='btn' href='{% url "blog:details" %}'>بیشتر بخوانید</a>
                                         </li>
                                         <li><i class="fas fa-calendar-alt"></i>21 مهر 1403</li>
                                     </ul>
@@ -891,23 +782,23 @@
                     <div class="col-xl-4 col-lg-6 col-md-10">
                         <div class="blog-post-item shine-animate-item">
                             <div class="blog-post-thumb">
-                                <a class='shine-animate' href='blog-details.html'><img src="{% static 'assets/img/blog/blog_post03.jpg' %}" alt=""></a>
+                                <a class='shine-animate' href='{% url "blog:details" %}'><img src="{% static 'assets/img/blog/blog_post03.jpg' %}" alt=""></a>
                                 <a class='post-tag' href='blog.html'>سرمایه گذاری</a>
                             </div>
                             <div class="blog-post-content">
-                                <h2 class="title"><a href='blog-details.html'>100 راه حل برتر برای درامد</a></h2>
+                                <h2 class="title"><a href='{% url "blog:details" %}'>100 راه حل برتر برای درامد</a></h2>
                                 <div class="blog-avatar">
                                     <div class="avatar-thumb">
                                         <img src="{% static 'assets/img/blog/blog_avatar01.png' %}" alt="">
                                     </div>
                                     <div class="avatar-content">
-                                        <p>توسط <a href='blog-details.html'>علی احمدی</a></p>
+                                        <p>توسط <a href='{% url "blog:details" %}'>علی احمدی</a></p>
                                     </div>
                                 </div>
                                 <div class="blog-post-meta">
                                     <ul class="list-wrap">
                                         <li>
-                                            <a class='btn' href='blog-details.html'>مطالعه بیشتر</a>
+                                            <a class='btn' href='{% url "blog:details" %}'>مطالعه بیشتر</a>
                                         </li>
                                         <li><i class="fas fa-calendar-alt"></i>21 مهر 1403</li>
                                     </ul>
@@ -924,51 +815,4 @@
         </section>
         <!-- blog-post-area-end -->
         <!-- call-back-area -->
-        <section class="call-back-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="call-back-content">
-                            <div class="section-title white-title mb-10 tg-heading-subheading animation-style3">
-                                <h2 class="title ">درخواست پشتیبانی</h2>
-                            </div>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
-                            <div class="shape">
-                                <img src="{% static 'assets/img/images/call_back_shape.png' %}" alt="" data-aos="fade-right" data-aos-delay="400">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="call-back-form">
-                            <form action="#">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-grp">
-                                            <input type="text" placeholder="نام *">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-grp">
-                                            <input type="email" placeholder="ایمیل *">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-grp">
-                                            <input type="number" placeholder="شماره تماس *">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <button type="submit" class="btn">ارسال</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- call-back-area-end -->
-    </main>
-    <!-- main-area-end -->
-    <!-- footer-area -->
 {% endblock %}

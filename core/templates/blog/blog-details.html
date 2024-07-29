@@ -12,17 +12,18 @@
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                     <ul class="navigation">
-                                        <li class="menu-item-has"><a href="{% url 'home:index' %}">خانه</a>
+                                        <li ><a href="{% url 'home:index' %}">خانه</a>
                                         </li>
-                                        <li class="menu-item-has"><a href="about.html">درباره ما</a>
+                                        <li><a href="{% url 'home:about' %}">درباره ما</a>
                                         </li>
-                                        <li class="menu-item-has"><a href="services.html">خدمات ما</a>
+                                        <li><a href="{% url 'services:services' %}">خدمات</a>
                                         </li>
-                                        <li class="menu-item-has"><a href="team.html">اعضای تیم</a>
+                                        <li><a href="{% url 'home:team' %}">اعضای تیم</a>
                                         </li>
-                                        <li class="active menu-item-has"><a href="blog.html">وبلاگ</a>
+                                        <li class="active menu-item-has"><a href="{% url 'blog:blog' %}">وبلاگ</a>
                                         </li>
-                                        <li><a href='contact.html'>تماس با ما</a></li>
+                                        <li><a href="{% url 'home:contact' %}">تماس باما</a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="tgmenu__action d-none d-md-block">
@@ -190,6 +191,7 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href='{% url "home:index" %}'>خانه</a></li>
+                                    <li class="breadcrumb-item active"><a href="{% url 'blog:blog' %}">وبلاگ</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">جزئیات وبلاگ</li>
                                 </ol>
                             </nav>
