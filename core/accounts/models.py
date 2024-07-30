@@ -38,7 +38,6 @@ class UserManager(BaseUserManager):
             raise ValueError(_("Superuser must have is_superuser=True."))
         return self.create_user(email, password, **extra_fields)
 
-
 class User(AbstractBaseUser , PermissionsMixin):
     
     email = models.EmailField(max_length=255 ,  unique=True)
@@ -86,7 +85,6 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.email
-
 
 @receiver(post_save, sender=User)
 def save_profile(sender, created, instance, **kwargs):
