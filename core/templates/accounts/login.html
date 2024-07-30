@@ -191,28 +191,36 @@
                     <div class="head-login">
                         <h3>ورود</h3>
                         <p>با ایمیل و رمز ورود خود وارد شوید</p>
-                        <div class="form-login">
+                        {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                    <li class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                        <form class="form-login" method="post" action="{% url 'accounts:login' %}?next={{ request.GET.next }}">
+                            {% csrf_token %}
                             <div class="form-group">
-                                <input type="text" class="form-control account" placeholder="آدرس ایمیل" />
+                                <input type="text" class="form-control account" placeholder="آدرس ایمیل" name="username" autocapitalize="none" required id="id_username" />
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="رمز عبور" />
+                                <input type="password" class="form-control" placeholder="رمز عبور" name="password" id="id_password" autocomplete="current-password" />
                                 <span class="view-password"></span>
                             </div>
                             <div class="box-forgot-pass">
                                 <label>
-                                    <input type="checkbox" class="cb-remember" value="1" /> یادآوری
+                                    <input type="checkbox" class="cb-remember" value="1" name="remember" /> یادآوری
                                 </label>
                                 <a href='forgot-password.html'>رمز عبور خود را فراموش کردید؟</a>
                             </div>
+                            <input type="hidden" name="next" value="{{ request.GET.next }}">
                             <div class="form-group">
                                 <input type="submit" class="btn btn-login" value="ورود" />
                             </div>
                             <p>حساب کاربری ندارید! <a class='link-bold' href='register.html'>ثبت نام</a> کنید</p>
-                        </div>
+                        </form>
                     </div>
-                </div>
-            </div>
+                </div>           
         </section>
         <!-- about-area-end -->
     </main>

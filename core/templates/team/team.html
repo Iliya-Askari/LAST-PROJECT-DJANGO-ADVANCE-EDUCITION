@@ -50,7 +50,11 @@
                                                 </svg>
                                             </a>
                                         </li>
-                                        <li class="header-btn"><a class='btn' href='login.html'>ورود</a></li>
+                                        {% if not user.is_authenticated %}
+                                        <li class="header-btn"><a class='btn' href='{% url "accounts:login" %}'>ورود</a></li>
+                                        {% else %}
+                                        <li class="header-btn"><a class='btn' href='{% url "accounts:logout" %}'>خروج</a></li>
+                                        {% endif %}
                                     </ul>
                                 </div>
                                 <div class="mobile-nav-toggler">
