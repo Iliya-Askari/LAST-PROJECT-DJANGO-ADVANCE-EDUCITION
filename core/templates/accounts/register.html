@@ -8,7 +8,7 @@
                         <div class="tgmenu__wrap">
                             <nav class="tgmenu__nav">
                                 <div class="logo">
-                                    <a href='index.html'><img src="assets/img/logo/logo.png" alt="Logo"></a>
+                                    <a href='{% url "home:index" %}'><img src="{% static 'assets/img/logo/logo.png' %}" alt="Logo"></a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                     <ul class="navigation">
@@ -16,7 +16,7 @@
                                         </li>
                                         <li><a href="{% url 'home:about' %}">درباره ما</a>
                                         </li>
-                                        <li><a href="{% url 'services:services' %}">خدمات</a>
+                                        
                                         </li>
                                         <li><a href="{% url 'home:team' %}">اعضای تیم</a>
                                         </li>
@@ -73,7 +73,7 @@
                             <nav class="tgmobile__menu-box">
                                 <div class="close-btn"><i class="fas fa-times"></i></div>
                                 <div class="nav-logo">
-                                    <a href=''><img src="assets/img/logo/logo.png" alt="Logo"></a>
+                                    <a href=''><img src="{% static 'assets/img/logo/logo.png' %}" alt="Logo"></a>
                                 </div>
                                 <div class="tgmobile__search">
                                     <form action="#">
@@ -150,7 +150,7 @@
                 <button><i class="far fa-window-close"></i></button>
             </div>
             <div class="offCanvas__logo mb-30">
-                <a href=''><img src="assets/img/logo/logo.png" alt="Logo"></a>
+                <a href=''><img src="{% static 'assets/img/logo/logo.png' %}" alt="Logo"></a>
             </div>
             <div class="offCanvas__side-info mb-30">
                 <div class="contact-list mb-30">
@@ -192,48 +192,32 @@
                         <h3>ثبت نام</h3>
                         <p>امروز یک حساب کاربری ایجاد کنید و استفاده از پلتفرم ما را شروع کنید</p>
                         <div class="box-login-with">
-                            <div class="form-group">
-                                <a href="#" class="btn btn-login-social">
-                                    <img src="assets/img/login/google.svg" />
-                                    ثبت نام با گوگل
-                                </a>
-                            </div>
-                            <div class="form-group">
-                                <a href="#" class="btn btn-login-social">
-                                    <img src="assets/img/login/apple.png" />
-                                    ثبت نام با اپل آیدی
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-or"><span>یا</span></div>
-                        <div class="form-login">
-                            <div class="form-group">
-                                <input type="text" class="form-control account" placeholder="نام" />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control email-address" placeholder="ایمیل" />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control account" placeholder="نام کاربری" />
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" placeholder="رمزعبور" />
-                                <span class="view-password"></span>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" placeholder="تکرار رمز عبور" />
-                                <span class="view-password"></span>
-                            </div>
-                            <div class="box-forgot-pass">
-                                <label>
-                                    <input type="checkbox" class="cb-remember" value="1" /> <span>من شرایط و ضوابط و خط مشی رازداری این وب سایت را خوانده و موافقم.</span>
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-login" value="ثبت نام" />
-                            </div>
-                            <p>حساب کاربری دارید ؟ <a class='link-bold' href='login.html'>وارد</a> شوید</p>
-                        </div>
+                            <form class="form-login" action="{% url 'accounts:register' %}" method="post">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <input type="email" class="form-control email-address" placeholder="ایمیل" name="email" maxlength="320" autofocus required id="id_email" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="رمزعبور" name="password1" autocomplete="new-password" required id="id_password1" />
+                                    <span class="view-password"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="تکرار رمز عبور" name="password2" autocomplete="new-password" required id="id_password2 />
+                                    <span class="view-password"></span>
+                                </div>
+                                <div class="box-forgot-pass">
+                                    <label>
+                                        <input type="checkbox" class="cb-remember" value="1" name="terms" required />
+                                        <span>من شرایط و ضوابط و خط مشی رازداری این وب سایت را خوانده و موافقم.</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-login" value="ثبت نام" />
+                                </div>
+                                <p>حساب کاربری دارید ؟ <a class='link-bold' href="{% url 'accounts:login' %}">وارد</a> شوید</p>
+                            </form>
+                            
                     </div>
                 </div>
             </div>
