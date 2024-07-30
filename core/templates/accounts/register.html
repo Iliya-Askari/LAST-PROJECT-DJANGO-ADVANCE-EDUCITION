@@ -1,63 +1,6 @@
-<!doctype html>
-<html class="no-js" lang="fa" dir="rtl">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>برگه ثبت نام</title>
-    <meta name="description" content="Apexa - Business Consulting HTML Template">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-    <!-- Place favicon.ico in the root directory -->
-    <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/flaticon.css">
-    <link rel="stylesheet" href="assets/css/odometer.css">
-    <link rel="stylesheet" href="assets/css/swiper-bundle.css">
-    <link rel="stylesheet" href="assets/css/aos.css">
-    <link rel="stylesheet" href="assets/css/default.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
-    <link rel="stylesheet" href="assets/css/font-css/iransans.css">
-</head>
-<body>
-    <!--Preloader-->
-    <div id="preloader">
-        <div id="loader" class="loader">
-            <div class="loader-container">
-                <div class="loader-icon"><img src="assets/img/logo/preloader.png" alt="Preloader"></div>
-            </div>
-        </div>
-    </div>
-    <!--Preloader-end -->
-    <!-- Scroll-top -->
-    <button class="scroll__top scroll-to-target" data-target="html">
-        <i class="fas fa-angle-up"></i>
-    </button>
-    <!-- Scroll-top-end-->
-    <!-- header-area -->
-    <header class="header-border-bottom">
-        <div id="header-fixed-height"></div>
-        <div class="tg-header__top">
-            <div class="container custom-container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <ul class="tg-header__top-info left-side list-wrap">
-                            <li><i class="flaticon-phone-call"></i><a href="tel:0123456789">+123 9898 500</a></li>
-                            <li><i class="flaticon-pin"></i>شیراز - بلوار چمران کوچه 12 </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <ul class="tg-header__top-right list-wrap">
-                            <li><i class="flaticon-envelope"></i><a href="mailto:info@test.com">info@test.com</a></li>
-                            <li><i class="flaticon-time"></i>شنبه - جمعه: 10:صبح- 09:00 شب</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
         <div id="sticky-header" class="tg-header__area">
             <div class="container custom-container">
                 <div class="row">
@@ -69,17 +12,18 @@
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                     <ul class="navigation">
-                                        <li class="menu-item-has"><a href="index.html#">خانه</a>
+                                        <li ><a href="{% url 'home:index' %}">خانه</a>
                                         </li>
-                                        <li class="menu-item-has"><a href="about.html#">درباره ما</a>
+                                        <li><a href="{% url 'home:about' %}">درباره ما</a>
                                         </li>
-                                        <li class="menu-item-has"><a href="services.html">خدمات ما</a>
+                                        <li><a href="{% url 'services:services' %}">خدمات</a>
                                         </li>
-                                        <li class="menu-item-has"><a href="team.html">اعضای تیم</a>
+                                        <li><a href="{% url 'home:team' %}">اعضای تیم</a>
                                         </li>
-                                        <li class="menu-item-has"><a href="blog.html">وبلاگ</a>
+                                        <li><a href="{% url 'blog:blog' %}">وبلاگ</a>
                                         </li>
-                                        <li><a href='contact.html'>تماس با ما</a></li>
+                                        <li><a href="{% url 'home:contact' %}">تماس باما</a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="tgmenu__action d-none d-md-block">
@@ -298,153 +242,4 @@
     </main>
     <!-- main-area-end -->
     <!-- footer-area -->
-    <footer>
-        <div class="footer__area-two">
-            <div class="footer__newsletter-two">
-                <div class="container">
-                    <div class="footer__newsletter-inner">
-                        <h2 class="title">عضویت در خبرنامه</h2>
-                        <form action="#">
-                            <input type="text" placeholder="ایمیل خود را وارد کنید ...">
-                            <button type="submit" class="btn">عضویت</button>
-                        </form>
-                        <div class="footer__social-two">
-                            <ul class="list-wrap">
-                                <li><a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="fab fa-pinterest-p"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="fab fa-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer__top-two">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-5 col-md-6">
-                            <div class="footer-widget">
-                                <div class="footer__content-two">
-                                    <div class="fw-logo mb-25">
-                                        <a href=''><img src="assets/img/logo/w_logo.png" alt=""></a>
-                                    </div>
-                                    <p>کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد.</p>
-                                    <div class="footer-info-list footer-info-two">
-                                        <ul class="list-wrap">
-                                            <li>
-                                                <div class="icon">
-                                                    <i class="flaticon-phone-call"></i>
-                                                </div>
-                                                <div class="content">
-                                                    <a href="tel:0123456789">+123 888 9999</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="icon">
-                                                    <i class="flaticon-envelope"></i>
-                                                </div>
-                                                <div class="content">
-                                                    <a href="mailto:info@test.com">info@test.com</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="icon">
-                                                    <i class="flaticon-pin"></i>
-                                                </div>
-                                                <div class="content">
-                                                    <p>شیراز بلوار چمران کوچه 12</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-3 col-sm-6">
-                            <div class="footer-widget">
-                                <h4 class="fw-title">دسترسی سریع</h4>
-                                <div class="footer-link-list">
-                                    <ul class="list-wrap">
-                                        <li><a href='index.html'>خانه</a></li>
-                                        <li><a href='about.html'>درباره ما</a></li>
-                                        <li><a href='services.html'>خدمات ما</a></li>
-                                        <li><a href='team.html'>اعضای تیم</a></li>
-                                        <li><a href='blog.html'>وبلاگ</a></li>
-                                        <li><a href='contact.html'>تماس باما</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
-                            <div class="footer-widget">
-                                <h4 class="fw-title">بهترین لینک ها</h4>
-                                <div class="footer-link-list">
-                                    <ul class="list-wrap">
-                                        <li><a href='about.html'>درباره ما</a></li>
-                                        <li><a href='contact.html'>شرکای ما</a></li>
-                                        <li><a href='contact.html'>توصیفات</a></li>
-                                        <li><a href='contact.html'>مطالعات ما</a></li>
-                                        <li><a href='contact.html'>قیمت گذاری</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="footer-widget">
-                                <h4 class="fw-title">پست های اینستاگرام</h4>
-                                <div class="footer-instagram">
-                                    <ul class="list-wrap">
-                                        <li><a href="javascript:void(0)"><img src="assets/img/images/footer_insta01.jpg" alt=""></a></li>
-                                        <li><a href="javascript:void(0)"><img src="assets/img/images/footer_insta02.jpg" alt=""></a></li>
-                                        <li><a href="javascript:void(0)"><img src="assets/img/images/footer_insta03.jpg" alt=""></a></li>
-                                        <li><a href="javascript:void(0)"><img src="assets/img/images/footer_insta04.jpg" alt=""></a></li>
-                                        <li><a href="javascript:void(0)"><img src="assets/img/images/footer_insta05.jpg" alt=""></a></li>
-                                        <li><a href="javascript:void(0)"><img src="assets/img/images/footer_insta06.jpg" alt=""></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer__bottom-two">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="copyright-text-two">
-                                <p>بومی سازی شده توسط امین احمدی : فارس کد</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- footer-area-end -->
-    <!-- JS here -->
-    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/jquery.odometer.min.js"></script>
-    <script src="assets/js/jquery.appear.js"></script>
-    <script src="assets/js/gsap.js"></script>
-    <script src="assets/js/ScrollTrigger.js"></script>
-    <script src="assets/js/SplitText.js"></script>
-    <script src="assets/js/gsap-animation.js"></script>
-    <script src="assets/js/jquery.parallaxScroll.min.js"></script>
-    <script src="assets/js/swiper-bundle.js"></script>
-    <script src="assets/js/ajax-form.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/aos.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-        const text = document.querySelector('.circle');
-        text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
-        const element = document.querySelectorAll('.circle span');
-        for (let i = 0; i < element.length; i++) {
-            element[i].style.transform = "rotate(" + i * 17 + "deg)"
-        }
-    </script>
-</body>
-</html>
+{% endblock %}
