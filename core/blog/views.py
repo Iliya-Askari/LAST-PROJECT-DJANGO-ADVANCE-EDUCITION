@@ -9,7 +9,7 @@ class BlogHome(ListView):
     model = Post
     template_name = 'blog/blog.html'
     context_object_name = 'posts'
-    paginate_by = 3
+    paginate_by = 6
 
     def get_queryset(self):
         currnt_time = timezone.now()
@@ -45,12 +45,5 @@ class BlogSingleView(DetailView):
         post.save()
         return post
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        pid = self.object.pk
-        current_time = timezone.now()
-        context['next_post'] = Post.objects.filter(id__gt=pid, status=1, published_date__lte=current_time).order_by('id').first()
-        context['prev_post'] = Post.objects.filter(id__lt=pid, status=1, published_date__lte=current_time).order_by('-id').first()
-        return context
     
 

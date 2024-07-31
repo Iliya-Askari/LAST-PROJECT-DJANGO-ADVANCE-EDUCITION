@@ -3,9 +3,10 @@ from django.db import models
 
 from django.urls import reverse
 from taggit.managers import TaggableManager
+
+from accounts.models import Profile
 # Create your models here.
 
-User = get_user_model()
 class Category(models.Model):
     name = models.CharField(max_length=255)
     def __str__(self):
@@ -15,7 +16,7 @@ class Category(models.Model):
 class Post(models.Model):
     image = models.ImageField(upload_to='blog/' , default='blog-1.jpg')
     title = models.CharField(max_length=255)
-    author = models.ForeignKey(User, on_delete=models.SET_NULL , null=True)
+    author = models.ForeignKey(Profile, on_delete=models.SET_NULL , null=True)
     content = models.TextField()
     tag = TaggableManager()
     category = models.ManyToManyField(Category)
