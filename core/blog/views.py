@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from django.core.paginator import Paginator
 from .models import Post
+from django.contrib import messages
 
 class BlogHome(ListView):
     model = Post
@@ -27,6 +28,31 @@ class BlogHome(ListView):
             posts = posts.filter(author__username=author_username)
         
         return posts
+
+class PostSearchView(ListView):
+    model = Post
+    template_name = 'blog/blog.html'
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        current_time = timezone.now()
+        posts = Post.objects.filter(status=1, published_date__lte=current_time)
+
+        query = self.request.GET.get('s', '')
+        if query:
+            posts = posts.filter(content__icontains=query)
+
+        if not posts.exists() and query:
+            messages.add_message(self.request, messages.ERROR, 'The desired phrase was not found. Please try again')
+            return Post.objects.none()
+
+        return posts
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['query'] = self.request.GET.get('s', '')
+        return context
+
 
 
 class BlogSingleView(DetailView):

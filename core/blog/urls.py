@@ -7,5 +7,6 @@ urlpatterns = [
     path('tag/<str:tag_name>/', BlogHome.as_view(), name='blog_tag'),
     path('author/<str:author_username>/', BlogHome.as_view(), name='author'),
     path('details/<int:pid>/', BlogSingleView.as_view(), name='details'),
+    path('search/', PostSearchView.as_view(), name='search'),
 
 ]
