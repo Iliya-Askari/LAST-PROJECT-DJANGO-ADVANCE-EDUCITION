@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block body %}
+{% load blog_tags %}
 <div id="sticky-header" class="tg-header__area">
     <div class="container custom-container">
         <div class="row">
@@ -280,12 +281,14 @@
                                                 <ul class="list-wrap">
                                                     {% for cat in post.category.all %}
                                                     <li>
-                                                        <a class='blog__post-tag-two' href='{% url "blog:category" cat.name %}'>
+                                                        <a class='blog__post-tag-two'
+                                                            href='{% url "blog:category" cat.name %}'>
                                                             {{ cat.name }}{% if not forloop.last %},{% endif %}
                                                         </a>
                                                     </li>
                                                     {% endfor %}
-                                                    <li><i class="fas fa-calendar-alt"></i>{{ post.published_date|date:"d F Y" }}</li>
+                                                    <li><i class="fas fa-calendar-alt"></i>{{
+                                                        post.published_date|date:"d F Y" }}</li>
                                                 </ul>
                                             </div>
                                             <h2 class="title">
@@ -297,7 +300,8 @@
                                                 </div>
                                                 <div class="avatar-content">
                                                     <p>توسط <a href='{% url "blog:author" post.author.user %}'>
-                                                        {{ post.author.first_name }} {{ post.author.last_name }}</a></p>
+                                                            {{ post.author.first_name }} {{ post.author.last_name }}</a>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -310,35 +314,38 @@
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination list-wrap">
                                     {% if page_obj.has_previous %}
-                                        <li class="page-item">
-                                            <a class="page-link" href="?page=1" aria-label="First">
-                                                <span aria-hidden="true"><i class="fas fa-angle-double-left"></i></span>
-                                            </a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
-                                                <span aria-hidden="true"><i class="fas fa-angle-left"></i></span>
-                                            </a>
-                                        </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page=1" aria-label="First">
+                                            <span aria-hidden="true"><i class="fas fa-angle-double-left"></i></span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}"
+                                            aria-label="Previous">
+                                            <span aria-hidden="true"><i class="fas fa-angle-left"></i></span>
+                                        </a>
+                                    </li>
                                     {% endif %}
                                     {% for num in page_obj.paginator.page_range %}
-                                        {% if page_obj.number == num %}
-                                            <li class="page-item active"><a class="page-link" href="#">{{ num }}</a></li>
-                                        {% else %}
-                                            <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
-                                        {% endif %}
+                                    {% if page_obj.number == num %}
+                                    <li class="page-item active"><a class="page-link" href="#">{{ num }}</a></li>
+                                    {% else %}
+                                    <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                                    {% endif %}
                                     {% endfor %}
                                     {% if page_obj.has_next %}
-                                        <li class="page-item">
-                                            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
-                                                <span aria-hidden="true"><i class="fas fa-angle-right"></i></span>
-                                            </a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Last">
-                                                <span aria-hidden="true"><i class="fas fa-angle-double-right"></i></span>
-                                            </a>
-                                        </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page_obj.next_page_number }}"
+                                            aria-label="Next">
+                                            <span aria-hidden="true"><i class="fas fa-angle-right"></i></span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}"
+                                            aria-label="Last">
+                                            <span aria-hidden="true"><i class="fas fa-angle-double-right"></i></span>
+                                        </a>
+                                    </li>
                                     {% endif %}
                                 </ul>
                             </nav>
@@ -347,9 +354,18 @@
                     <div class="col-30">
                         <aside class="blog__sidebar">
                             {% include 'blog/blog-search.html' %}
-                            {% include 'blog/blog-category.html' %}
-                            {% include 'blog/latest_posts.html' %}                     
-                            {% include 'blog/blog-tags.html' %}
+                            {% postcategotys %}
+                            {% include 'blog/latest_posts.html' %}
+                            <div class="sidebar__widget">
+                                <h4 class="sidebar__widget-title">برچسب ها</h4>
+                                <div class="sidebar__tag-list">
+                                    <ul class="list-wrap">
+                                        {% for tag in post.tag.all %}
+                                        <li><a href="{% url 'blog:blog_tag' tag.name %}">{{ tag.name }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
                         </aside>
                     </div>
                 </div>

@@ -1,16 +1,11 @@
 {% load static %}
-
 <div class="sidebar__widget">
     <h4 class="sidebar__widget-title">برچسب ها</h4>
     <div class="sidebar__tag-list">
         <ul class="list-wrap">
-            <li><a href="#">دارایی، مالیه، سرمایه گذاری</a></li>
-            <li><a href="#">داده ها</a></li>
-            <li><a href="#">آژانس</a></li>
-            <li><a href="#">کسب و کار</a></li>
-            <li><a href="#">شرکت های بزرگ، دارای شخصیت حقوقی</a></li>
-            <li><a href="#">توسعه</a></li>
-            <li><a href="#">مشورت</a></li>
+            {% for tag in posts.tag.all %}
+            <li><a href="{% url 'blog:blog_tag' tag_name=tag.name %}">{{ tag.name }}</a></li>
+            {% endfor %}
         </ul>
     </div>
 </div>
