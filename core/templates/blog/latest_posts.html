@@ -1,0 +1,22 @@
+<div class="sidebar__widget">
+    <h4 class="sidebar__widget-title">آخرین مطالب</h4>
+    <div class="sidebar__post-list">
+        {% for post in posts %}
+        <div class="sidebar__post-item">
+            <div class="sidebar__post-thumb">
+                <a href="{% url 'blog:details' post.id %}">
+                    <img src="{{ post.image.url }}" alt="">
+                </a>
+            </div>
+            <div class="sidebar__post-content">
+                <h5 class="title">
+                    <a href="{% url 'blog:details' post.id %}">{{ post.title }}</a>
+                </h5>
+                <span class="date">
+                    <i class="flaticon-time"></i>{{ post.published_date|date:"d F Y" }}
+                </span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
