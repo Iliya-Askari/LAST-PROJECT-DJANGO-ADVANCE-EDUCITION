@@ -355,7 +355,9 @@
                             {% include 'blog/blog-search.html' %}
                             {% postcategotys %}
                             {% lastposts %}
+                            {% for post in posts %}
                             {% include 'blog/blog-tags.html' %}
+                            {% endfor %}
                         </aside>
                     </div>
                 </div>

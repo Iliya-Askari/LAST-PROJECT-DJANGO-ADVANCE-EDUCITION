@@ -3,7 +3,7 @@
     <h4 class="sidebar__widget-title">برچسب ها</h4>
     <div class="sidebar__tag-list">
         <ul class="list-wrap">
-            {% for tag in posts.tag.all %}
+            {% for tag in post.tag.all %}
             <li><a href="{% url 'blog:blog_tag' tag_name=tag.name %}">{{ tag.name }}</a></li>
             {% endfor %}
         </ul>
