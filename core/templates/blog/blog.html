@@ -354,17 +354,8 @@
                         <aside class="blog__sidebar">
                             {% include 'blog/blog-search.html' %}
                             {% postcategotys %}
-                            {% include 'blog/latest_posts.html' %}
-                            <div class="sidebar__widget">
-                                <h4 class="sidebar__widget-title">برچسب ها</h4>
-                                <div class="sidebar__tag-list">
-                                    <ul class="list-wrap">
-                                        {% for tag in post.tag.all %}
-                                        <li><a href="{% url 'blog:blog_tag' tag.name %}">{{ tag.name }}</a></li>
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                            </div>
+                            {% lastposts %}
+                            {% include 'blog/blog-tags.html' %}
                         </aside>
                     </div>
                 </div>
