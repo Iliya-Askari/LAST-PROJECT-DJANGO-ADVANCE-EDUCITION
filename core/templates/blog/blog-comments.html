@@ -1,0 +1,77 @@
+{% load static %}
+
+<div class="comments-wrap">
+    <h3 class="comments-wrap-title">02 دیدگاه</h3>
+    <div class="latest-comments">
+        <ul class="list-wrap">
+            <li>
+                <div class="comments-box">
+                    <div class="comments-avatar">
+                        <img src="{% static 'assets/img/blog/comment01.png' %}" alt="img">
+                    </div>
+                    <div class="comments-text">
+                        <div class="avatar-name">
+                            <h6 class="name">جسیکا رز</h6>
+                            <span class="date">27 مهر 1403</span>
+                        </div>
+                        <p>کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
+                            جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت.</p>
+                        <a href="#" class="reply-btn">پاسخ</a>
+                    </div>
+                </div>
+                <ul class="children">
+                    <li>
+                        <div class="comments-box">
+                            <div class="comments-avatar">
+                                <img src="{% static 'assets/img/blog/comment02.png' %}"
+                                    alt="img">
+                            </div>
+                            <div class="comments-text">
+                                <div class="avatar-name">
+                                    <h6 class="name">پارکر ویلی</h6>
+                                    <span class="date">28 مهر 1403</span>
+                                </div>
+                                <p>اعتماد شما را به شدت مشتری ما مجرای واقعی را انتخاب می
+                                    کند زیرا می دانیم که ما بهترین منطقه در انتظار واقعاً
+                                    هستیم.</p>
+                                <a href="#" class="reply-btn">پاسخ</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="comment-respond">
+    <h3 class="comment-reply-title">ارسال دیدگاه</h3>
+    <form action="#" class="comment-form">
+        <p class="comment-notes">آدرس ایمیل شما نمایش داده نخواهد شد *</p>
+        <div class="form-grp">
+            <textarea name="comment" placeholder="دیدگاه شما"></textarea>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-grp">
+                    <input type="text" placeholder="نام">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-grp">
+                    <input type="email" placeholder="ایمیل">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-grp">
+                    <input type="url" placeholder="وبسایت">
+                </div>
+            </div>
+        </div>
+        <div class="form-grp checkbox-grp">
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox">نام ، ایمیل و وب سایت من را در این مرورگر ذخیره کنید برای
+                دفعه بعد که نظر می دهم.</label>
+        </div>
+        <button type="submit" class="btn">ارسال پست</button>
+    </form>
+</div>
