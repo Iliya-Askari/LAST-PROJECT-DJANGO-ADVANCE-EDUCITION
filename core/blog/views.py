@@ -3,7 +3,7 @@ from django.views.generic import ListView , TemplateView , DetailView
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from django.core.paginator import Paginator
-from .models import Post
+from .models import *
 from django.contrib import messages
 
 class BlogHome(ListView):
@@ -53,8 +53,6 @@ class PostSearchView(ListView):
         context['query'] = self.request.GET.get('s', '')
         return context
 
-
-
 class BlogSingleView(DetailView):
     model = Post
     template_name = 'blog/blog-details.html'
@@ -71,5 +69,7 @@ class BlogSingleView(DetailView):
         post.save()
         return post
 
-    
-
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        return context
