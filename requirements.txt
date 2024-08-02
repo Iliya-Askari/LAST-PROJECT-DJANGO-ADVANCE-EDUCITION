@@ -1,3 +1,4 @@
+@ -1,93 +0,0 @@
 amqp==5.2.0
 asgiref==3.8.1
 async-timeout==4.0.3
