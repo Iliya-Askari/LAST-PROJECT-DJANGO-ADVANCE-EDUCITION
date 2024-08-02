@@ -298,7 +298,7 @@
                                                     <img src="{{ post.author.image.url }}" alt="">
                                                 </div>
                                                 <div class="avatar-content">
-                                                    <p>توسط <a href='{% url "blog:author" post.author.user %}'>
+                                                    <p>توسط <a href='{% url "blog:author" post.author.first_name %}'>
                                                             {{ post.author.first_name }} {{ post.author.last_name }}</a>
                                                     </p>
                                                 </div>
