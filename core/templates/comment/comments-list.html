@@ -43,36 +43,4 @@
         </ul>
     </div>
 </div>
-<div class="comment-respond">
-    <h3 class="comment-reply-title">ارسال دیدگاه</h3>
-    <form action="#" class="comment-form">
-        <p class="comment-notes">آدرس ایمیل شما نمایش داده نخواهد شد *</p>
-        <div class="form-grp">
-            <textarea name="comment" placeholder="دیدگاه شما"></textarea>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-grp">
-                    <input type="text" placeholder="نام">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-grp">
-                    <input type="email" placeholder="ایمیل">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-grp">
-                    <input type="url" placeholder="وبسایت">
-
-                </div>
-            </div>
-        </div>
-        <div class="form-grp checkbox-grp">
-            <input type="checkbox" id="checkbox">
-            <label for="checkbox">نام ، ایمیل و وب سایت من را در این مرورگر ذخیره کنید برای
-                دفعه بعد که نظر می دهم.</label>
-        </div>
-        <button type="submit" class="btn">ارسال پست</button>
-    </form>
-</div>
+{% include 'comment/comments-create.html' %}
