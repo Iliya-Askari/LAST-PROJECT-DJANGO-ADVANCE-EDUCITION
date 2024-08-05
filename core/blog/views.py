@@ -1,8 +1,11 @@
 from django.shortcuts import render
-from django.views.generic import ListView , TemplateView , DetailView
+from django.views.generic import ListView , TemplateView , DetailView , DeleteView
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from django.core.paginator import Paginator
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import Http404
+from django.urls import reverse_lazy
 from .models import *
 from django.contrib import messages
 
@@ -24,8 +27,6 @@ class BlogHome(ListView):
             posts = posts.filter(category__name=cat_name)
         if tag_name:
             posts = posts.filter(tag__name__in=[tag_name])
-        if author_username:
-            posts = posts.filter(author__username=author_username)
         
         return posts
 
@@ -73,3 +74,18 @@ class BlogSingleView(DetailView):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
         return context
+
+
+class DeleteBlogView(LoginRequiredMixin, DeleteView):
+    model = Post
+    context_object_name = "delete"
+    success_url = reverse_lazy("blog:blog")
+
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
+
+    def get_queryset(self):
+        profile = Profile.objects.filter(user=self.request.user).first()
+        if not profile:
+            raise Http404("Profile does not exist")
+        return self.model.objects.filter(author=profile)

@@ -281,7 +281,7 @@
                                         <li>
                                             <div class="blog-avatar">
                                                 <div class="avatar-thumb">
-                                                    <img src="{{post.author.image.url}}" href="{% url 'blog:author' post.author.first_name %}">
+                                                    <img src="{{post.author.image.url}}" href="{% url 'blog:author'  %}">
                                                 </div>
                                                 <div class="avatar-content">
                                                     <p>توسط <a href='#'>{{ post.author.first_name }} {{ post.author.last_name }}</a></p>
@@ -289,7 +289,14 @@
                                             </div>
                                         </li>
                                         <li><i class="fas fa-calendar-alt"></i>{{ post.published_date|date:"d M Y" }}</li>
-                                        <li><i class="far fa-comment"></i><a href='#'>05 دیدگاه</a></li>
+
+                                        <ul class="list-wrap">
+                                            <form method="post" action="{% url 'blog:delete' pk=object.id %}">
+                                                {% csrf_token %}
+                                            <li><input type="submit" value="تأیید"></li>
+                                            </form>
+                                        </ul>
+                                        
                                     </ul>
                                 </div>
                                 <p>{{ post.content|safe }}</p>
@@ -310,11 +317,11 @@
                             </div>
                             <div class="blog__avatar-wrap mb-60">
                                 <div class="blog__avatar-img">
-                                    <a href="{% url 'blog:author' post.author.first_name %}"><img src="{{post.author.image.url}}" alt=""></a>
+                                    <a href="{% url 'blog:author' %}"><img src="{{post.author.image.url}}" alt=""></a>
                                 </div>
                                 <div class="blog__avatar-info">
                                     <span class="designation">نویسنده</span>
-                                    <h4 class="name"><a href="{% url 'blog:author' post.author.first_name %}">{{ post.author.first_name }} {{ post.author.last_name }}</a></h4>
+                                    <h4 class="name"><a href="{% url 'blog:author'  %}">{{ post.author.first_name }} {{ post.author.last_name }}</a></h4>
                                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
                                 </div>
                             </div>
