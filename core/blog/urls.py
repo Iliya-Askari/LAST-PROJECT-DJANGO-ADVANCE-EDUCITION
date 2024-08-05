@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path , include
 from .views import *
 
 app_name = "blog"
@@ -11,4 +11,5 @@ urlpatterns = [
     path('details/<int:pid>/', BlogSingleView.as_view(), name='details'),
     path('search/', PostSearchView.as_view(), name='search'),
     path('details/<int:pk>/delete/', DeleteBlogView.as_view(), name='delete'),
+    path('api/v1/',include('blog.api.v1.urls'))
 ]

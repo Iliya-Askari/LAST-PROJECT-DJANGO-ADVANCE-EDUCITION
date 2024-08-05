@@ -32,5 +32,6 @@ class Post(models.Model):
     
     class Meta:
         ordering=['-created_date']
-    def get_absolute_url(self):
-        return reverse('blog:single',kwargs={'pid':self.id})
+
+    def get_absolute_api_url(self):
+        return reverse("blog:api-v1:post-detail", kwargs={"pk": self.pk})

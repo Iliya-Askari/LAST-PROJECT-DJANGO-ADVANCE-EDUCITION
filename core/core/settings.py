@@ -48,6 +48,11 @@ INSTALLED_APPS = [
     'blog',
     'django_summernote',
     'taggit',
+    'rest_framework',
+    "django_filters",
+    "drf_yasg",
+    "rest_framework.authtoken",
+    "rest_framework_simplejwt",
 
 ]
 
