@@ -4,9 +4,9 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 from django.contrib.auth import login
 from django.shortcuts import redirect
-
+from django.http import HttpResponse
 from .forms import SignUpForm
-
+from .tasks import send_emai
 class CustomLoginView(LoginView):
     template_name = 'accounts/login.html'
     redirect_authenticated_user = True
@@ -42,3 +42,6 @@ class CustomSignUpView(FormView):
             return redirect("todo:task_list")
         return super(CustomSignUpView, self).get(*args, **kwargs)
     
+def send_email(request):
+    send_emai.delay()
+    return HttpResponse("<h1>Email sent successfully</h1>")
